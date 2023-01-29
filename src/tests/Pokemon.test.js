@@ -54,7 +54,6 @@ describe('Teste o componente <Pokemon.js />', () => {
   });
   it('Teste se existe um ícone de estrela nos Pokémon favoritados:', () => {
     renderWithRouter(<App />);
-    // const pokemonName = screen.getByTestId(testId).textContent;
     const moreDetails = screen.getByRole('link', { name: /More details/i });
     userEvent.click(moreDetails);
     const favCheckBox = screen.getByRole('checkbox', { name: /Pokémon favoritado?/i });
@@ -63,6 +62,5 @@ describe('Teste o componente <Pokemon.js />', () => {
     const favStar = screen.getByAltText(/Pikachu is marked as favorite?/i);
     expect(favStar).toBeInTheDocument();
     expect(favStar).toHaveAttribute('src', '/star-icon.svg');
-    // expect(favStar).toHaveAttribute('alt', `${pokemonName} is marked as favorite?`);
   });
 });
