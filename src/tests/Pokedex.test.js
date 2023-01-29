@@ -8,11 +8,23 @@ import Pokedex from '../pages/Pokedex';
 
 const idTest = 'pokemon-name';
 
+const isPokemonFavoriteById = {
+  4: false,
+  10: false,
+  23: false,
+  25: true,
+  65: false,
+  78: false,
+  143: false,
+  148: false,
+  151: false,
+};
+
 describe(' Teste o componente Pokedex', () => {
   it('Teste se a página contém um heading h2 com o texto Encountered Pokémon renderizado pela Pokedex passando as props', () => {
     renderWithRouter(<Pokedex
       pokemonList={ pokemonList }
-      isPokemonFavoriteById={ 0 }
+      isPokemonFavoriteById={ isPokemonFavoriteById }
     />);
     const title = screen.getByRole('heading', { level: 2, name: /Encountered Pokémon/i });
     expect(title).toBeInTheDocument();
