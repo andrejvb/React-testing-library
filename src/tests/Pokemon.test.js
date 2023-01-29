@@ -1,5 +1,5 @@
 import React from 'react';
-import { getByAltText, getByLabelText, getByPlaceholderText, getByRole, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
@@ -54,7 +54,7 @@ describe('Teste o componente <Pokemon.js />', () => {
   });
   it('Teste se existe um ícone de estrela nos Pokémon favoritados:', () => {
     renderWithRouter(<App />);
-    const pokemonName = screen.getByTestId(testId).textContent;
+    // const pokemonName = screen.getByTestId(testId).textContent;
     const moreDetails = screen.getByRole('link', { name: /More details/i });
     userEvent.click(moreDetails);
     const favCheckBox = screen.getByRole('checkbox', { name: /Pokémon favoritado?/i });
